@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    INDEX
+{% endblock %}
+
+{% block main %}
+    
+    <table>
+       <tr>
+           <th>
+               Stock
+           </th>
+           <th>
+               Symbol
+           </th>
+           <th>
+               Quantity
+           </th>
+           <th>
+               Current_price
+           </th>
+           <th>
+               Value
+           </th>
+       </tr>
+    
+    {% for res in result1 %}
+        <tr>
+            <td>
+                {{ res.stock }}
+            </td>
+            <td>
+                {{ res.symbol }}
+            </td>
+            <td>
+                {{ res.quantity }}
+            </td>
+            <td>
+                {{ res.curr }}
+            </td>
+            <td>
+                {{ res.value }}
+            </td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="4">
+            Cash Balance
+        </td>
+        <td>
+            {{ result2 }}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+           <b>Grand Total</b> 
+        </td>
+        <td>
+            <b>{{ sum }}</b>
+        </td>
+    </tr>
+    </table>    
+    
+{% endblock %}

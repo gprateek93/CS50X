@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HISTORY
+{% endblock %}
+
+{% block main %}
+    
+    <table title="LOG">
+       <tr>
+           <th>
+               Symbol
+           </th>
+           <th>
+               Purchase/Sale Price
+           </th>
+           <th>
+               Action
+           </th>
+           <th>
+               Number of shares
+           </th>
+           <th>
+               Timestamp
+           </th>
+           
+       </tr>
+    
+    {% for res in result %}
+        <tr>
+            <td>
+                {{ res.symbol }}
+            </td>
+            <td>
+                {{ res.price }}
+            </td>
+            <td>
+                {{ res.action }}
+            </td>
+            <td>
+                {{ res.qty }}
+            </td>
+            <td>
+                {{ res.timestamp }}
+            </td>
+        </tr>
+    {% endfor %}
+   
+    </table>    
+    
+{% endblock %}
